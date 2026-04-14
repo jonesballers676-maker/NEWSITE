@@ -255,58 +255,149 @@ footer { background: var(--navy); padding: 2.75rem 5%; display: flex; align-item
   background: radial-gradient(circle, rgba(41,121,255,0.2) 0%, transparent 65%);
   pointer-events: none;
 }
-.hero-inner {
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 1.05fr) minmax(220px, 0.95fr) minmax(240px, 300px);
+  gap: clamp(1.25rem, 3vw, 2.75rem);
+  align-items: center;
+  width: 100%;
+  max-width: 1540px;
+  margin: 0 auto;
+  padding: clamp(2rem, 4vw, 3.5rem) 5%;
+  min-height: calc(90vh - 68px);
   position: relative;
   z-index: 2;
-  padding: 5%;
-  max-width: 640px;
+}
+.hero-inner {
   animation: fadeUp 0.7s ease both;
   min-width: 0;
 }
-.hero-stats {
+.hero-visual {
+  min-width: 0;
+  animation: fadeUp 0.75s ease 0.08s both;
+}
+.hero-visual-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  max-height: min(72vh, 580px);
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(41,121,255,0.4);
+  box-shadow:
+    0 4px 24px rgba(0,0,0,0.2),
+    0 28px 56px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+  background: linear-gradient(160deg, var(--navy-mid) 0%, var(--navy-light) 45%, #152a5c 100%);
+}
+.hero-visual-watermark {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 34%;
-  max-width: 380px;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(41,121,255,0.22);
+  pointer-events: none;
+}
+.hero-visual-watermark svg {
+  width: min(55%, 200px);
+  height: auto;
+}
+.hero-visual-img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.hero-visual-tag {
+  margin-top: 0.85rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.62);
+  text-align: center;
+  line-height: 1.4;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.04);
+  overflow: hidden;
+  min-height: min(72vh, 580px);
+  max-height: min(72vh, 580px);
+}
+.hero-stat {
+  width: 100%;
+  padding: 1.35rem 1.25rem;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-left: 1px solid rgba(255,255,255,0.05);
-  background: rgba(255,255,255,0.025);
-}
-.hero-stat {
-  width: 100%;
-  padding: 2rem;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
   text-align: center;
 }
 .hero-stat:last-child { border-bottom: none; }
 
+@media (max-width: 1100px) {
+  .hero-grid {
+    grid-template-columns: minmax(240px, 1fr) minmax(180px, 0.85fr) minmax(220px, 260px);
+    gap: 1.25rem 1.5rem;
+  }
+  .hero-visual-tag { font-size: 0.68rem; }
+}
+
 @media (max-width: 900px) {
   .hero {
-    flex-direction: column;
-    align-items: stretch;
     min-height: auto;
   }
-  .hero-inner {
-    max-width: none;
-    padding: 2.25rem 5% 1.5rem;
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+    padding: 2.25rem 5% 0;
+    gap: 0;
   }
-  .hero-stats {
-    position: relative;
+  .hero-inner {
+    padding-bottom: 1.25rem;
+  }
+  .hero-visual {
+    order: 2;
     width: 100%;
-    max-width: none;
+    max-width: 520px;
+    margin: 0 auto 1.25rem;
+  }
+  .hero-visual-frame {
+    aspect-ratio: 16 / 10;
+    max-height: 260px;
+  }
+  .hero-visual-watermark svg { width: min(30%, 120px); }
+  .hero-visual-tag { margin-top: 0.65rem; }
+  .hero-stats {
+    order: 3;
+    min-height: auto;
+    max-height: none;
     flex-direction: row;
     flex-wrap: wrap;
+    border-radius: 0;
     border-left: none;
-    border-top: 1px solid rgba(255,255,255,0.08);
+    border-right: none;
+    border-bottom: none;
+    width: calc(100% + 10%);
+    margin-left: -5%;
   }
   .hero-stat {
     flex: 1 1 50%;
-    min-width: 140px;
     padding: 1.35rem 1rem;
     border-bottom: none;
     border-right: 1px solid rgba(255,255,255,0.06);
