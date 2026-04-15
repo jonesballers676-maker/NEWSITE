@@ -198,7 +198,6 @@
 
     const exts = ['jpg', 'jpeg', 'png', 'webp', 'JPG', 'JPEG', 'PNG', 'WEBP'];
     const maxN = 60;
-    const stopAfterMisses = 6;
 
     function probeSrc(n) {
       return new Promise(function (resolve) {
@@ -216,13 +215,13 @@
     }
 
     (async function load() {
-      var miss = 0;
+      var slots = [];
+      for (var s = 1; s <= maxN; s++) slots.push(s);
+      var results = await Promise.all(slots.map(function (n) { return probeSrc(n); }));
       var count = 0;
-      for (var n = 1; n <= maxN && miss < stopAfterMisses; n++) {
-        var src = await probeSrc(n);
-        if (!src) { miss++; continue; }
-        miss = 0;
-        count++;
+      for (var i = 0; i < results.length; i++) {
+        var src = results[i];
+        if (!src) continue;
         var wrap = document.createElement('div');
         wrap.className = 'work-gallery-photo';
         wrap.setAttribute('role', 'button');
@@ -231,10 +230,11 @@
         var img = document.createElement('img');
         img.src = src;
         img.alt = 'Completed roofing project';
-        img.loading = 'lazy';
+        img.loading = count < 8 ? 'eager' : 'lazy';
         img.decoding = 'async';
         wrap.appendChild(img);
         root.appendChild(wrap);
+        count++;
       }
       if (!count) {
         root.innerHTML = '<div class="work-gallery-empty">No project photos found yet. Add files in <strong>images</strong> named <code>project1.jpg</code>, <code>project2.png</code>, <code>project3.jpg</code>, and so on.</div>';
