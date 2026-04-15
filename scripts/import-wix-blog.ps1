@@ -249,9 +249,9 @@ function Build-BlogCardsHtml([array]$posts) {
     $imgSrc = if ($post.ImageRel) { Html-Encode $post.ImageRel } else { "" }
     [void]$cardBuilder.AppendLine("    <div class=""card"" style=""display:flex;flex-direction:column;"">")
     if ($imgSrc) {
-      [void]$cardBuilder.AppendLine("      <img src=""$imgSrc"" alt=""$titleEnc"" style=""height:180px;border-radius:4px 4px 0 0;margin:-2.25rem -2.25rem 1.5rem;object-fit:cover;border-bottom:1px solid var(--light-gray);"" loading=""lazy"" decoding=""async"">")
+      [void]$cardBuilder.AppendLine("      <img src=""$imgSrc"" alt=""$titleEnc"" style=""width:calc(100% + 4.5rem);max-width:none;height:180px;border-radius:0;margin:-2.25rem -2.25rem 1.5rem;object-fit:cover;object-position:center;display:block;transform:scale(1.08);transform-origin:center;background:var(--navy);border-bottom:1px solid var(--light-gray);"" loading=""lazy"" decoding=""async"">")
     } else {
-      [void]$cardBuilder.AppendLine("      <div style=""background:var(--navy);height:180px;border-radius:4px 4px 0 0;margin:-2.25rem -2.25rem 1.5rem;display:flex;align-items:center;justify-content:center;""><svg width=""48"" height=""48"" viewBox=""0 0 24 24"" fill=""none"" stroke=""rgba(41,121,255,0.5)"" stroke-width=""1.5""><path d=""M13 10V3L4 14h7v7l9-11h-7z""/></svg></div>")
+      [void]$cardBuilder.AppendLine("      <div style=""width:calc(100% + 4.5rem);max-width:none;background:var(--navy);height:180px;border-radius:0;margin:-2.25rem -2.25rem 1.5rem;box-sizing:border-box;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--light-gray);""><svg width=""48"" height=""48"" viewBox=""0 0 24 24"" fill=""none"" stroke=""rgba(41,121,255,0.5)"" stroke-width=""1.5""><path d=""M13 10V3L4 14h7v7l9-11h-7z""/></svg></div>")
     }
     [void]$cardBuilder.AppendLine("      <div style=""font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:0.5rem;"">$dateEnc</div>")
     [void]$cardBuilder.AppendLine("      <h3 style=""font-size:1.1rem;margin-bottom:0.6rem;""><a href=""$hrefEnc"" style=""color:inherit;text-decoration:none;"">$titleEnc</a></h3>")
