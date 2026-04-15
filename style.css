@@ -274,6 +274,10 @@ footer { background: var(--navy); padding: 2.75rem 5%; display: flex; align-item
   transition: opacity 1.2s ease;
   will-change: opacity, transform;
 }
+.hero-slide.is-prime {
+  opacity: 1;
+  transform: scale(1.06);
+}
 .hero-slide.is-active {
   opacity: 1;
   animation: heroSlideZoom 7s ease forwards;

@@ -44,7 +44,7 @@
 </nav>
 <section class="hero">
   <div class="hero-media" aria-hidden="true">
-    <div class="hero-slide is-active" style="background-image:url('images/hero-roof-1.JPG');"></div>
+    <div class="hero-slide is-prime" style="background-image:url('images/hero-roof-1.JPG');"></div>
     <div class="hero-slide" style="background-image:url('images/hero-roof-2.JPG');"></div>
     <div class="hero-slide" style="background-image:url('images/hero-roof-3.JPG');"></div>
     <div class="hero-slide" style="background-image:url('images/hero-roof-4.jpg');"></div>
@@ -318,6 +318,12 @@
   document.querySelectorAll('.faq-q').forEach(btn => btn.addEventListener('click', () => btn.parentElement.classList.toggle('open')));
 
   const heroSlides = Array.from(document.querySelectorAll('.hero-slide'));
+  if (heroSlides.length) {
+    requestAnimationFrame(() => {
+      heroSlides[0].classList.remove('is-prime');
+      heroSlides[0].classList.add('is-active');
+    });
+  }
   if (heroSlides.length > 1) {
     let activeSlide = 0;
     setInterval(() => {
