@@ -34,10 +34,10 @@ nav {
 .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; min-width: 0; }
 .nav-logo:hover .nav-logo-name { color: var(--blue-light); }
 .nav-logo-img {
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  max-width: 40px;
+  width: 54px;
+  height: 54px;
+  min-width: 54px;
+  max-width: 54px;
   object-fit: contain;
   object-position: center;
   display: block;
@@ -94,7 +94,7 @@ nav {
   .dropdown { display: block; position: static; border-top: none; box-shadow: none; background: transparent; min-width: auto; }
   .dropdown li a { padding: 4px 12px; }
   .nav-cta { line-height: 2.2 !important; margin-left: 0 !important; display: inline-block !important; margin-top: 0.5rem; }
-  .nav-logo-img { width: 36px; min-width: 36px; height: 36px; max-width: 36px; }
+  .nav-logo-img { width: 46px; min-width: 46px; height: 46px; max-width: 46px; }
 }
 
 /* â”€â”€ PAGE HEADER (inner pages) â”€â”€ */
