@@ -176,11 +176,11 @@ $articleBodyHtml
   <div class="areas-lbl">Proudly Serving All of Brevard County &amp; Beyond</div>
   <div class="areas-tags">
     <span class="area-chip">Titusville</span><span class="area-chip">Merritt Island</span>
-    <span class="area-chip">Cocoa</span><span class="area-chip">Viera</span>
+    <span class="area-chip">Cocoa</span><a class="area-chip" href="../roofing-in-viera.html">Viera</a>
     <span class="area-chip">Melbourne</span><span class="area-chip">Palm Bay</span>
     <span class="area-chip">Mims</span><span class="area-chip">New Smyrna Beach</span>
-    <span class="area-chip">Edgewater</span><span class="area-chip">Orlando</span>
-    <span class="area-chip">Port Orange</span>
+    <span class="area-chip">Edgewater</span><a class="area-chip" href="../roofing-in-orlando-fl.html">Orlando</a>
+    <a class="area-chip" href="../roofing-in-port-orange.html">Port Orange</a>
   </div>
 </div><footer>
   <div class="footer-brand">
@@ -211,12 +211,15 @@ $articleBodyHtml
   <div class="footer-col">
     <h4>Service Areas</h4>
     <ul>
-      <li><a href="../roofing-titusville-fl.html">Titusville, FL</a></li>
-      <li><a href="../roofing-merritt-island-fl.html">Merritt Island, FL</a></li>
-      <li><a href="../roofing-cocoa-fl.html">Cocoa, FL</a></li>
-      <li><a href="../roofing-brevard-county-fl.html">Brevard County, FL</a></li>
-      <li><a href="../roofing-melbourne-fl.html">Melbourne, FL</a></li>
-      <li><a href="../roofing-palm-bay-fl.html">Palm Bay, FL</a></li>
+      <li><a href="../roofing-in-titusville.html">Titusville, FL</a></li>
+      <li><a href="../roofing-in-merritt-island.html">Merritt Island, FL</a></li>
+      <li><a href="../roofing-in-cocoa.html">Cocoa, FL</a></li>
+      <li><a href="../roofing-in-viera.html">Viera, FL</a></li>
+      <li><a href="../brevardcountyroofers.html">Brevard County, FL</a></li>
+      <li><a href="../roofing-in-melbourne.html">Melbourne, FL</a></li>
+      <li><a href="../roofing-in-palm-bay.html">Palm Bay, FL</a></li>
+      <li><a href="../roofing-in-orlando-fl.html">Orlando, FL</a></li>
+      <li><a href="../roofing-in-port-orange.html">Port Orange, FL</a></li>
     </ul>
   </div>
   <div class="footer-col">
