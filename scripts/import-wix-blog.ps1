@@ -143,9 +143,9 @@ function Build-PostHtml(
     <li><a href="../blog.html">Blog</a></li>
     <li class="has-drop"><a href="#">Our Team &#9662;</a>
       <ul class="dropdown">
-        <li><a href="../team-chris.html">Chris Threadgill</a></li>
-        <li><a href="../team-jason.html">Jason Walton</a></li>
-        <li><a href="../team-jake.html">Jake Titus</a></li>
+        <li><a href="../christhreadgill.html">Chris Threadgill</a></li>
+        <li><a href="../jasonwalton.html">Jason Walton</a></li>
+        <li><a href="../jaketitus.html">Jake Titus</a></li>
       </ul>
     </li>
     <li><a href="../quotes.html" class="nav-cta">Free Quote</a></li>
@@ -203,9 +203,9 @@ $articleBodyHtml
     <ul>
       <li><a href="../faq.html">FAQ</a></li>
       <li><a href="../blog.html">Blog</a></li>
-      <li><a href="../team-chris.html">Chris Threadgill</a></li>
-      <li><a href="../team-jason.html">Jason Walton</a></li>
-      <li><a href="../team-jake.html">Jake Titus</a></li>
+      <li><a href="../christhreadgill.html">Chris Threadgill</a></li>
+      <li><a href="../jasonwalton.html">Jason Walton</a></li>
+      <li><a href="../jaketitus.html">Jake Titus</a></li>
     </ul>
   </div>
   <div class="footer-col">
