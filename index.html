@@ -9,17 +9,13 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body><nav>
-  <div class="nav-logo">
-    <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
-      <rect width="38" height="38" rx="6" fill="rgba(41,121,255,0.15)"/>
-      <path d="M8 21L19 11L30 21" stroke="#2979ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M11 19V28H16V22H22V28H27V19" stroke="#2979ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    <div>
+  <a href="index.html" class="nav-logo" aria-label="Robert Jones Roofing home">
+    <img src="images/logo.png" alt="" width="200" height="44" class="nav-logo-img" decoding="async">
+    <div class="nav-logo-text">
       <span class="nav-logo-name">Robert Jones Roofing</span>
       <span class="nav-logo-sub">&amp; General Contracting</span>
     </div>
-  </div>
+  </a>
   <button class="nav-hamburger" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
