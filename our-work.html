@@ -156,20 +156,41 @@
       var img = lb.querySelector('img');
       var closeBtn = lb.querySelector('.project-lightbox-close');
       var lastFocus = null;
+      var scrollLockY = 0;
+      function focusNoScroll(el) {
+        if (!el || typeof el.focus !== 'function') return;
+        try {
+          el.focus({ preventScroll: true });
+        } catch (err) {
+          el.focus();
+        }
+      }
       function openLb(src, alt) {
         lastFocus = document.activeElement;
+        scrollLockY = window.scrollY || window.pageYOffset || 0;
+        document.body.style.position = 'fixed';
+        document.body.style.top = '-' + scrollLockY + 'px';
+        document.body.style.left = '0';
+        document.body.style.right = '0';
+        document.body.style.width = '100%';
         img.src = src;
         img.alt = alt || '';
         lb.classList.add('is-open');
-        document.body.style.overflow = 'hidden';
-        closeBtn.focus();
+        requestAnimationFrame(function () {
+          focusNoScroll(closeBtn);
+        });
       }
       function closeLb() {
         lb.classList.remove('is-open');
-        document.body.style.overflow = '';
         img.removeAttribute('src');
         img.alt = '';
-        if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
+        document.body.style.width = '';
+        window.scrollTo(0, scrollLockY);
+        if (lastFocus && typeof lastFocus.focus === 'function') focusNoScroll(lastFocus);
         lastFocus = null;
       }
       closeBtn.addEventListener('click', function (e) { e.stopPropagation(); closeLb(); });
@@ -184,6 +205,7 @@
     root.addEventListener('click', function (e) {
       var ph = e.target.closest('.work-gallery-photo');
       if (!ph || !root.contains(ph)) return;
+      e.preventDefault();
       var im = ph.querySelector('img');
       if (im) lightbox.open(im.src, im.alt);
     });

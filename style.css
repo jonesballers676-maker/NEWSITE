@@ -429,6 +429,7 @@ footer { background: var(--navy); padding: 2.75rem 5%; display: flex; align-item
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.22s ease, visibility 0.22s;
+  overscroll-behavior: contain;
 }
 .project-lightbox.is-open {
   opacity: 1;
