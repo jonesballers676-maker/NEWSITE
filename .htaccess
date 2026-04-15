@@ -1,0 +1,24 @@
+# Extensionless URLs for static HTML (Apache / DreamHost shared hosting)
+# Requires: AllowOverride FileInfo (or All) so mod_rewrite runs.
+
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# 301: /index.html -> /
+RewriteCond %{THE_REQUEST} ^[A-Z]+\s+/index\.html(\?\S*)?\s [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+# 301: /path/to/page.html -> /path/to/page (not index)
+RewriteCond %{THE_REQUEST} ^[A-Z]+\s+/(.+)\.html(\?\S*)?\s [NC]
+RewriteCond %1 !^index$
+RewriteRule ^ /%1 [R=301,L,NE]
+
+# Internally serve page.html when requesting /page (no extension)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+</IfModule>
