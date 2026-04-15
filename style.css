@@ -1,4 +1,4 @@
-/* ── RESET & ROOT ── */
+﻿/* â”€â”€ RESET & ROOT â”€â”€ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --navy:        #0e1f4a;
@@ -19,11 +19,11 @@ body { font-family: 'Barlow', sans-serif; background: var(--white); color: var(-
 img { max-width: 100%; }
 input, textarea, select { max-width: 100%; }
 
-/* ── TYPOGRAPHY ── */
+/* â”€â”€ TYPOGRAPHY â”€â”€ */
 h1,h2,h3,h4 { line-height: 1; }
 p { line-height: 1.7; }
 
-/* ── NAV ── */
+/* â”€â”€ NAV â”€â”€ */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
   background: var(--navy);
@@ -34,11 +34,12 @@ nav {
 .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; min-width: 0; }
 .nav-logo:hover .nav-logo-name { color: var(--blue-light); }
 .nav-logo-img {
+  width: 40px;
   height: 40px;
-  width: auto;
-  max-width: min(200px, 42vw);
+  min-width: 40px;
+  max-width: 40px;
   object-fit: contain;
-  object-position: left center;
+  object-position: center;
   display: block;
   flex-shrink: 0;
 }
@@ -93,10 +94,10 @@ nav {
   .dropdown { display: block; position: static; border-top: none; box-shadow: none; background: transparent; min-width: auto; }
   .dropdown li a { padding: 4px 12px; }
   .nav-cta { line-height: 2.2 !important; margin-left: 0 !important; display: inline-block !important; margin-top: 0.5rem; }
-  .nav-logo-img { height: 36px; max-width: min(160px, 55vw); }
+  .nav-logo-img { width: 36px; min-width: 36px; height: 36px; max-width: 36px; }
 }
 
-/* ── PAGE HEADER (inner pages) ── */
+/* â”€â”€ PAGE HEADER (inner pages) â”€â”€ */
 .page-header {
   margin-top: 68px; background: var(--navy);
   padding: 5rem 5% 4rem; position: relative; overflow: hidden;
@@ -111,7 +112,7 @@ nav {
 .page-header h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem,6vw,5rem); color: white; letter-spacing: 0.02em; margin-bottom: 0.75rem; }
 .page-header p { color: rgba(255,255,255,0.78); font-size: 1.05rem; font-weight: 300; max-width: 560px; line-height: 1.7; }
 
-/* ── SECTION UTILITIES ── */
+/* â”€â”€ SECTION UTILITIES â”€â”€ */
 .section { padding: 5rem 5%; }
 .section-alt { background: var(--off-white); }
 .section-dark { background: var(--navy); }
@@ -123,7 +124,7 @@ nav {
 .sec-sub { font-size: 1rem; color: var(--gray); font-weight: 400; line-height: 1.7; max-width: 560px; margin-bottom: 3rem; }
 .sec-sub-light { color: rgba(255,255,255,0.72); }
 
-/* ── BUTTONS ── */
+/* â”€â”€ BUTTONS â”€â”€ */
 .btn { display: inline-block; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 13px 30px; border-radius: 4px; transition: background 0.2s, transform 0.15s, border-color 0.2s; }
 .btn-blue { background: var(--blue-bright); color: white; }
 .btn-blue:hover { background: var(--blue-light); transform: translateY(-2px); }
@@ -133,12 +134,12 @@ nav {
 .btn-white:hover { background: var(--off-white); transform: translateY(-2px); }
 .btn-lg { padding: 16px 40px; font-size: 1.1rem; }
 
-/* ── TRUST BAR ── */
+/* â”€â”€ TRUST BAR â”€â”€ */
 .trust-bar { background: var(--blue-bright); padding: 0.85rem 5%; display: flex; align-items: center; justify-content: center; gap: 1.75rem; flex-wrap: wrap; }
 .trust-item { display: flex; align-items: center; gap: 7px; color: white; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; white-space: nowrap; }
 .trust-sep { color: rgba(255,255,255,0.3); }
 
-/* ── CARDS ── */
+/* â”€â”€ CARDS â”€â”€ */
 .card-grid { display: grid; gap: 1px; background: var(--light-gray); border-radius: 8px; overflow: hidden; border: 1px solid var(--light-gray); }
 .card-grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); }
 .card-grid-3 { grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); }
@@ -155,7 +156,7 @@ nav {
 /* Material badges */
 .material-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(41,121,255,0.1); border: 1px solid rgba(41,121,255,0.3); color: var(--blue); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; margin-bottom: 1rem; }
 
-/* ── FEAT LIST (check items) ── */
+/* â”€â”€ FEAT LIST (check items) â”€â”€ */
 .feat-list { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; }
 .feat { display: flex; align-items: flex-start; gap: 12px; }
 .feat-dot { width: 22px; height: 22px; background: var(--blue-bright); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
@@ -165,7 +166,7 @@ nav {
 .feat-dark p, .feat-dark span { color: var(--navy); }
 .feat-dark strong { color: var(--navy-light); }
 
-/* ── FAQ ── */
+/* â”€â”€ FAQ â”€â”€ */
 .faq-item { border-bottom: 1px solid var(--light-gray); }
 .faq-q { width: 100%; background: none; border: none; text-align: left; padding: 1.25rem 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--navy); gap: 1rem; }
 .faq-q .faq-icon { width: 24px; height: 24px; border: 1.5px solid var(--blue-bright); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--blue-bright); font-size: 1.1rem; transition: transform 0.25s, background 0.25s; }
@@ -174,7 +175,7 @@ nav {
 .faq-item.open .faq-a { max-height: 600px; }
 .faq-a-inner { padding: 0 0 1.25rem; color: var(--gray); font-size: 0.93rem; line-height: 1.75; font-weight: 400; }
 
-/* ── PROCESS STEPS ── */
+/* â”€â”€ PROCESS STEPS â”€â”€ */
 .p-steps { display: flex; flex-direction: column; }
 .p-step { display: flex; gap: 1.25rem; padding: 1.5rem 0; border-bottom: 1px solid var(--light-gray); }
 .p-step:last-child { border-bottom: none; }
@@ -183,7 +184,7 @@ nav {
 .p-body h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.05rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); margin-bottom: 0.3rem; }
 .p-body p { font-size: 0.87rem; color: var(--gray); font-weight: 400; line-height: 1.55; }
 
-/* ── REVIEWS ── */
+/* â”€â”€ REVIEWS â”€â”€ */
 .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1.25rem; }
 .rev-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(41,121,255,0.18); border-radius: 8px; padding: 2rem; transition: border-color 0.2s, background 0.2s; }
 .rev-card:hover { border-color: rgba(41,121,255,0.45); background: rgba(255,255,255,0.08); }
@@ -194,7 +195,7 @@ nav {
 .rev-name { font-size: 0.85rem; font-weight: 600; color: white; }
 .rev-loc  { font-size: 0.74rem; color: rgba(255,255,255,0.58); }
 
-/* ── CTA BAND ── */
+/* â”€â”€ CTA BAND â”€â”€ */
 .cta-band { background: var(--blue-bright); padding: 5rem 5%; text-align: center; position: relative; overflow: hidden; }
 .cta-band::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.06) 1px,transparent 1px); background-size: 42px 42px; }
 .cta-band > * { position: relative; z-index: 1; }
@@ -203,13 +204,13 @@ nav {
 .cta-phone { display: block; font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem,5vw,3rem); color: white; text-decoration: none; letter-spacing: 0.06em; margin-bottom: 1.5rem; transition: opacity 0.2s; }
 .cta-phone:hover { opacity: 0.85; }
 
-/* ── SERVICE AREAS ── */
+/* â”€â”€ SERVICE AREAS â”€â”€ */
 .areas { background: var(--off-white); padding: 3rem 5%; text-align: center; border-top: 1px solid var(--light-gray); }
 .areas-lbl { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-muted); margin-bottom: 1rem; }
 .areas-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
 .area-chip { font-size: 0.84rem; color: var(--navy); background: white; border: 1px solid var(--light-gray); padding: 5px 14px; border-radius: 100px; }
 
-/* ── FOOTER ── */
+/* â”€â”€ FOOTER â”€â”€ */
 footer { background: var(--navy); padding: 2.75rem 5%; display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 2rem; border-top: 3px solid var(--blue-bright); }
 .footer-brand .footer-name { font-weight: 600; font-size: 1.05rem; color: white; display: block; }
 .footer-brand .footer-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-light); }
@@ -223,14 +224,14 @@ footer { background: var(--navy); padding: 2.75rem 5%; display: flex; align-item
 .footer-info a:hover { color: var(--blue-light); }
 .footer-copy { font-size: 0.7rem; color: rgba(255,255,255,0.45); margin-top: 4px; }
 
-/* ── SPLIT LAYOUT ── */
+/* â”€â”€ SPLIT LAYOUT â”€â”€ */
 .split { display: grid; grid-template-columns: 1fr 1fr; }
 .split-dark { background: var(--navy-light); }
 .split-light { background: var(--off-white); }
 .split > div { padding: 5rem 5%; }
 @media (max-width: 900px) { .split { grid-template-columns: 1fr; } }
 
-/* ── ANIMATIONS ── */
+/* â”€â”€ ANIMATIONS â”€â”€ */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.55s ease, transform 0.55s ease; }
 .reveal.in { opacity: 1; transform: translateY(0); }
@@ -240,7 +241,7 @@ footer { background: var(--navy); padding: 2.75rem 5%; display: flex; align-item
   .footer-col { width: 100%; }
 }
 
-/* ── HERO (home) ── */
+/* â”€â”€ HERO (home) â”€â”€ */
 .hero {
   margin-top: 68px;
   min-height: 90vh;
@@ -331,7 +332,7 @@ footer { background: var(--navy); padding: 2.75rem 5%; display: flex; align-item
   .hero-stat:last-child { border-bottom: none; }
 }
 
-/* ── RESPONSIVE GRIDS (use with inline grids that need stacking) ── */
+/* â”€â”€ RESPONSIVE GRIDS (use with inline grids that need stacking) â”€â”€ */
 @media (max-width: 900px) {
   .u-grid-stack {
     grid-template-columns: 1fr !important;
@@ -359,3 +360,4 @@ footer { background: var(--navy); padding: 2.75rem 5%; display: flex; align-item
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
   gap: 1.5rem;
 }
+
