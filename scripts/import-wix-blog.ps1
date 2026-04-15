@@ -234,7 +234,7 @@ $articleBodyHtml
 </footer>
 <script>
   const els = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver(e => e.forEach(x => x.isIntersecting && x.target.classList.add('in')), {threshold:0.08});
+  const io = new IntersectionObserver(e => e.forEach(x => x.isIntersecting && x.target.classList.add('in')), {threshold:0});
   els.forEach(el => io.observe(el));
   document.querySelectorAll('.faq-q').forEach(btn => btn.addEventListener('click', () => btn.parentElement.classList.toggle('open')));
 </script>

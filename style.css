@@ -261,6 +261,7 @@ footer { background: var(--navy); padding: 2.75rem 5%; display: flex; align-item
 
 /* â”€â”€ ANIMATIONS â”€â”€ */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+/* opacity:0 until .in — page scripts use IntersectionObserver with threshold:0 so very tall .reveal blocks (blog card grid) still activate when only a slice is visible (8% of a huge element was often never reached on phones). */
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.55s ease, transform 0.55s ease; }
 .reveal.in { opacity: 1; transform: translateY(0); }
 
