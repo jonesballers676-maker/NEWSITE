@@ -395,12 +395,74 @@ footer { background: var(--navy); padding: 2.75rem 5%; display: flex; align-item
   border: 1px solid var(--light-gray);
   aspect-ratio: 3 / 2;
   background: var(--navy);
+  cursor: pointer;
+}
+.work-gallery-photo:focus {
+  outline: 2px solid var(--blue-bright);
+  outline-offset: 3px;
+}
+.work-gallery-photo:focus:not(:focus-visible) {
+  outline: none;
+}
+.work-gallery-photo:focus-visible {
+  outline: 2px solid var(--blue-bright);
+  outline-offset: 3px;
 }
 .work-gallery-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  pointer-events: none;
+}
+
+/* Project gallery lightbox (our-work) */
+.project-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem 1.25rem 1.25rem;
+  background: rgba(0, 0, 0, 0.88);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.22s ease, visibility 0.22s;
+}
+.project-lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+.project-lightbox img {
+  max-width: min(100%, 94vw);
+  max-height: min(86vh, 100%);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.45);
+}
+.project-lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+.project-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.22);
 }
 .work-gallery-empty {
   grid-column: 1 / -1;

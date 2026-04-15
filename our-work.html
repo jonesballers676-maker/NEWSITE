@@ -141,6 +141,61 @@
     const note = document.getElementById('completed-projects-note');
     if (!root) return;
 
+    function initProjectLightbox() {
+      var lb = document.getElementById('project-lightbox');
+      if (!lb) {
+        lb = document.createElement('div');
+        lb.id = 'project-lightbox';
+        lb.className = 'project-lightbox';
+        lb.setAttribute('role', 'dialog');
+        lb.setAttribute('aria-modal', 'true');
+        lb.setAttribute('aria-label', 'Enlarged project photo');
+        lb.innerHTML = '<button type="button" class="project-lightbox-close" aria-label="Close enlarged image">&times;</button><img src="" alt="">';
+        document.body.appendChild(lb);
+      }
+      var img = lb.querySelector('img');
+      var closeBtn = lb.querySelector('.project-lightbox-close');
+      var lastFocus = null;
+      function openLb(src, alt) {
+        lastFocus = document.activeElement;
+        img.src = src;
+        img.alt = alt || '';
+        lb.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+      }
+      function closeLb() {
+        lb.classList.remove('is-open');
+        document.body.style.overflow = '';
+        img.removeAttribute('src');
+        img.alt = '';
+        if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+        lastFocus = null;
+      }
+      closeBtn.addEventListener('click', function (e) { e.stopPropagation(); closeLb(); });
+      lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && lb.classList.contains('is-open')) closeLb();
+      });
+      return { open: openLb, close: closeLb };
+    }
+
+    var lightbox = initProjectLightbox();
+    root.addEventListener('click', function (e) {
+      var ph = e.target.closest('.work-gallery-photo');
+      if (!ph || !root.contains(ph)) return;
+      var im = ph.querySelector('img');
+      if (im) lightbox.open(im.src, im.alt);
+    });
+    root.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      var ph = e.target.closest('.work-gallery-photo');
+      if (!ph || !root.contains(ph)) return;
+      e.preventDefault();
+      var im = ph.querySelector('img');
+      if (im) lightbox.open(im.src, im.alt);
+    });
+
     const exts = ['jpg', 'jpeg', 'png', 'webp', 'JPG', 'JPEG', 'PNG', 'WEBP'];
     const maxN = 60;
     const stopAfterMisses = 6;
@@ -170,6 +225,9 @@
         count++;
         var wrap = document.createElement('div');
         wrap.className = 'work-gallery-photo';
+        wrap.setAttribute('role', 'button');
+        wrap.setAttribute('tabindex', '0');
+        wrap.setAttribute('aria-label', 'View larger: completed roofing project');
         var img = document.createElement('img');
         img.src = src;
         img.alt = 'Completed roofing project';
