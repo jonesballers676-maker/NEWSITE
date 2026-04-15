@@ -69,14 +69,17 @@
         </div>
         <div><label style="font-size:0.78rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--navy);display:block;margin-bottom:6px;">Phone Number *</label><input name="phone" type="tel" required placeholder="(321) 555-0000" style="width:100%;padding:12px 14px;border:1.5px solid var(--light-gray);border-radius:4px;font-size:0.95rem;font-family:'Barlow',sans-serif;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--blue-bright)'" onblur="this.style.borderColor='var(--light-gray)'"></div>
         <div><label style="font-size:0.78rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--navy);display:block;margin-bottom:6px;">Email Address</label><input name="email" type="email" placeholder="john@example.com" style="width:100%;padding:12px 14px;border:1.5px solid var(--light-gray);border-radius:4px;font-size:0.95rem;font-family:'Barlow',sans-serif;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--blue-bright)'" onblur="this.style.borderColor='var(--light-gray)'"></div>
-        <div><label style="font-size:0.78rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--navy);display:block;margin-bottom:6px;">Property Address</label><input name="address" type="text" placeholder="123 Main St, Titusville, FL" style="width:100%;padding:12px 14px;border:1.5px solid var(--light-gray);border-radius:4px;font-size:0.95rem;font-family:'Barlow',sans-serif;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--blue-bright)'" onblur="this.style.borderColor='var(--light-gray)'"></div>
+        <div class="form-address-row" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div><label style="font-size:0.78rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--navy);display:block;margin-bottom:6px;">Home Address *</label><input name="address" type="text" required placeholder="123 Main St" style="width:100%;padding:12px 14px;border:1.5px solid var(--light-gray);border-radius:4px;font-size:0.95rem;font-family:'Barlow',sans-serif;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--blue-bright)'" onblur="this.style.borderColor='var(--light-gray)'"></div>
+          <div><label style="font-size:0.78rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--navy);display:block;margin-bottom:6px;">City *</label><input name="city" type="text" required placeholder="Titusville" style="width:100%;padding:12px 14px;border:1.5px solid var(--light-gray);border-radius:4px;font-size:0.95rem;font-family:'Barlow',sans-serif;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--blue-bright)'" onblur="this.style.borderColor='var(--light-gray)'"></div>
+        </div>
         <div><label style="font-size:0.78rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--navy);display:block;margin-bottom:6px;">Type of Work *</label>
-          <select name="type_of_work" required style="width:100%;padding:12px 14px;border:1.5px solid var(--light-gray);border-radius:4px;font-size:0.95rem;font-family:'Barlow',sans-serif;outline:none;background:white;cursor:pointer;">
+          <select id="type_of_work" name="type_of_work" required style="width:100%;padding:12px 14px;border:1.5px solid var(--light-gray);border-radius:4px;font-size:0.95rem;font-family:'Barlow',sans-serif;outline:none;background:white;cursor:pointer;">
             <option value="">Select one...</option>
             <option value="Roof Replacement">Roof Replacement</option>
             <option value="Roof Repair">Roof Repair</option>
             <option value="Storm Damage">Storm Damage</option>
-            <option value="Free Inspection">Free Inspection</option>
+            <option value="Soft Washing">Soft Washing</option>
             <option value="Commercial Roofing">Commercial Roofing</option>
             <option value="Roof Shield Plan">Roof Shield Plan</option>
             <option value="Other">Other</option>
@@ -100,7 +103,7 @@
         <h4 style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--navy);margin-bottom:1rem;">What to Expect</h4>
         <ul class="feat-list">
           <li class="feat feat-dark"><div class="feat-dot"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span>We'll respond within 1 business day</span></li>
-          <li class="feat feat-dark"><div class="feat-dot"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span>Schedule a free on-site inspection</span></li>
+          <li class="feat feat-dark"><div class="feat-dot"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span>Schedule a free on-site estimate</span></li>
           <li class="feat feat-dark"><div class="feat-dot"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span>Receive a detailed, honest written quote</span></li>
           <li class="feat feat-dark"><div class="feat-dot"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span>No pressure, no obligation - ever</span></li>
         </ul>
@@ -138,6 +141,7 @@
     <ul>
       <li><a href="residential.html">Residential Roofing</a></li>
       <li><a href="commercial.html">Commercial Roofing</a></li>
+      <li><a href="quotes.html#type_of_work">Soft Washing</a></li>
       <li><a href="quotes.html">Free Estimate</a></li>
       <li><a href="our-work.html">Our Work</a></li>
     </ul>
@@ -180,6 +184,10 @@
   document.querySelectorAll('.faq-q').forEach(btn => btn.addEventListener('click', () => btn.parentElement.classList.toggle('open')));
 </script>
 </body></html>
+
+
+
+
 
 
 
