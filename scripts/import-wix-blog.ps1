@@ -261,7 +261,7 @@ function Build-BlogCardsHtml([array]$posts) {
   }
 
   return @"
-<section class="section section-alt">
+<section class="section section-alt blog-list">
   <div class="reveal" style="margin-bottom:2rem;">
     <div class="eyebrow">Latest Posts</div>
     <h2 class="sec-title">Roofing Insights &amp; Homeowner Guides</h2>
@@ -277,7 +277,7 @@ $($cardBuilder.ToString().TrimEnd())
 function Update-BlogListing([array]$posts, [string]$blogHtmlPath) {
   $blogHtml = [IO.File]::ReadAllText($blogHtmlPath)
   $replacementSection = Build-BlogCardsHtml $posts
-  $updated = [regex]::Replace($blogHtml, '(?is)<section class="section section-alt">.*?</section>', [System.Text.RegularExpressions.MatchEvaluator]{ param($m) $replacementSection }, 1)
+  $updated = [regex]::Replace($blogHtml, '(?is)<section class="section section-alt[^"]*">.*?</section>', [System.Text.RegularExpressions.MatchEvaluator]{ param($m) $replacementSection }, 1)
   [IO.File]::WriteAllText($blogHtmlPath, $updated, [System.Text.UTF8Encoding]::new($false))
 }
 

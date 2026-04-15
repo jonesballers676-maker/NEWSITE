@@ -154,6 +154,33 @@ nav {
 .card h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); margin-bottom: 0.6rem; }
 .card p { font-size: 0.88rem; color: var(--gray); line-height: 1.65; font-weight: 400; }
 
+/* Blog index: full-bleed thumbnails (override global img max-width) */
+.blog-list .card > img:first-child {
+  width: calc(100% + 4.5rem);
+  max-width: none;
+  height: 180px;
+  margin: -2.25rem -2.25rem 1.5rem;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 0;
+  border-bottom: 1px solid var(--light-gray);
+}
+.blog-list .card > div:first-child {
+  width: calc(100% + 4.5rem);
+  max-width: none;
+  height: 180px;
+  margin: -2.25rem -2.25rem 1.5rem;
+  box-sizing: border-box;
+  border-radius: 0;
+  border-bottom: 1px solid var(--light-gray);
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.blog-list .card > div:first-child svg { flex-shrink: 0; }
+
 /* Material badges */
 .material-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(41,121,255,0.1); border: 1px solid rgba(41,121,255,0.3); color: var(--blue); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; margin-bottom: 1rem; }
 
