@@ -13,7 +13,7 @@
   --gray:        #4d5870;
   --gray-muted:  #5f6b82;
   --gold:        #f5a623;
-  --nav-height:  84px;
+  --nav-height:  112px;
 }
 html { scroll-behavior: smooth; }
 body { font-family: 'Barlow', sans-serif; background: var(--white); color: var(--navy); overflow-x: hidden; }
@@ -32,31 +32,31 @@ nav {
   padding: 0 5%; height: var(--nav-height);
   border-bottom: 3px solid var(--blue-bright);
 }
-.nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; min-width: 0; }
+.nav-logo { display: flex; align-items: center; gap: 16px; text-decoration: none; color: inherit; min-width: 0; }
 .nav-logo:hover .nav-logo-name { color: var(--blue-light); }
 .nav-logo-img {
-  width: 64px;
-  height: 64px;
-  min-width: 64px;
-  max-width: 64px;
+  width: 96px;
+  height: 96px;
+  min-width: 96px;
+  max-width: 96px;
   object-fit: contain;
   object-position: center;
   display: block;
   flex-shrink: 0;
 }
 .nav-logo-text { min-width: 0; }
-.nav-logo-name { font-weight: 600; font-size: clamp(0.9rem, 2.5vw, 1.12rem); color: white; display: block; line-height: 1.2; transition: color 0.2s; }
-.nav-logo-sub  { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-light); display: block; }
+.nav-logo-name { font-weight: 600; font-size: clamp(1rem, 2.8vw, 1.35rem); color: white; display: block; line-height: 1.2; transition: color 0.2s; }
+.nav-logo-sub  { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-light); display: block; }
 .nav-links { display: flex; gap: 0; list-style: none; align-items: center; }
 .nav-links > li { position: relative; }
 .nav-links > li > a {
   display: block; padding: 0 1rem; line-height: var(--nav-height);
   color: rgba(255,255,255,0.72); text-decoration: none;
-  font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;
+  font-size: 0.95rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;
   white-space: nowrap; transition: color 0.2s;
 }
 .nav-links > li > a:hover { color: var(--blue-light); }
-.nav-cta { background: var(--blue-bright) !important; color: white !important; border-radius: 6px; margin-left: 0.6rem; line-height: 42px !important; padding: 0 22px !important; font-size: 0.9rem !important; }
+.nav-cta { background: var(--blue-bright) !important; color: white !important; border-radius: 8px; margin-left: 0.65rem; line-height: 50px !important; padding: 0 26px !important; font-size: 0.95rem !important; }
 .nav-cta:hover { background: var(--blue-light) !important; }
 
 /* Dropdown */
@@ -95,7 +95,7 @@ nav {
   .dropdown { display: block; position: static; border-top: none; box-shadow: none; background: transparent; min-width: auto; }
   .dropdown li a { padding: 4px 12px; }
   .nav-cta { line-height: 2.2 !important; margin-left: 0 !important; display: inline-block !important; margin-top: 0.5rem; }
-  .nav-logo-img { width: 54px; min-width: 54px; height: 54px; max-width: 54px; }
+  .nav-logo-img { width: 76px; min-width: 76px; height: 76px; max-width: 76px; }
 }
 
 /* â”€â”€ PAGE HEADER (inner pages) â”€â”€ */
